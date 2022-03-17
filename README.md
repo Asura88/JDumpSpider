@@ -30,7 +30,7 @@ $ mvn package
 - ShiroKey
     - CookieRememberMeManager 
 
-更多类型支持尽请期待。
+更多类型支持敬请期待。
 
 # 使用
 
