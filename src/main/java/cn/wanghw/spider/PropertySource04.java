@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class PropertySource03 implements ISpider {
+public class PropertySource04 implements ISpider {
 
     @Override
     public String getName() {
-        return "MapPropertySources";
+        return "ConsulPropertySources";
     }
 
     @Override
@@ -24,7 +24,7 @@ public class PropertySource03 implements ISpider {
         try {
             List<Long> listObjId = new ArrayList<>();
             OQLEngine oqlEngine = new OQLEngine(heap);
-            oqlEngine.executeQuery(OQLSnippets.getTable + OQLSnippets.isMap + "map(filter(map(filter(map(heap.objects('org.springframework.core.env.MapPropertySource'), 'it.source'), 'isMap(it)'), 'getTable(it)'), 'it != null'), 'it.id');", o -> {
+            oqlEngine.executeQuery(OQLSnippets.getTable + OQLSnippets.isMap + "map(filter(map(filter(map(heap.objects('org.springframework.cloud.consul.config.ConsulPropertySource'), 'it.properties'), 'isMap(it)'), 'getTable(it)'), 'it != null'), 'it.id');", o -> {
                 Long id = CommonUtils.getObjectId(o);
                 if (id != null) {
                     listObjId.add(id);
