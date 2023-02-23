@@ -33,6 +33,8 @@ public class Main implements Callable<Integer> {
             new PropertySource02(),
             new PropertySource03(),
             new PropertySource04(),
+            new JwtKey01(),
+            new UserInfo01(),
             new OSS01()
     };
 
